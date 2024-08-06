@@ -2,17 +2,17 @@
 {
     internal class Menu
     {
-        GameEngine gameClass = new();
+        GameEngine gameClass = new(); //Integration; utilize GameEngine method to run different type of games
         internal void ShowMenu(string name, DateTime date)
         {
-            Console.Clear(); //clear the console everytime the menu runs
+            Console.Clear(); //clear the console everytime the menu runs 
             Console.WriteLine("------------------------");
             Console.WriteLine($"Hello {name}. It's {date}. This is your math game. It's going to be awesome!");
             Console.WriteLine("Press any key to show the menu");
             Console.ReadLine();
             Console.WriteLine("\n");
 
-            var isGameOn = true;
+            var isGameOn = true; //Main menu loop 
 
             do
             {
@@ -32,7 +32,7 @@ Q - Quit");
 
                 //Switch statement to select the game operation
 
-                switch (gameSelected.Trim().ToLower())
+                switch (gameSelected.Trim().ToLower()) //
                 {
                     case "v":
                         Helpers.PrintGames();
@@ -57,7 +57,7 @@ Q - Quit");
                         Console.WriteLine("Invalid Input");
                         break;
                 }
-            } while (isGameOn);
+            } while (isGameOn); //Menu loop, will run if isGameOn is true
         }
 
     }
