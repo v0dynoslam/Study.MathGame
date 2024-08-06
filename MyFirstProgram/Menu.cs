@@ -26,7 +26,7 @@ M - Multiplication
 D - Division
 Q - Quit");
 
-                Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine("----------------------------------------------------");
 
                 var gameSelected = Console.ReadLine();
 
