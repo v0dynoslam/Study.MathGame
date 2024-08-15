@@ -9,7 +9,7 @@ namespace MyFirstProgram
 {
     internal class WeatherService
     {
-        private readonly string _apiKey = "a24211faf25f0ab4e2edccf46b43153d\r\n";
+        private readonly string _apiKey = "public key"; \\hidden for now
         private readonly HttpClient _httpClient;
 
         public WeatherService()
