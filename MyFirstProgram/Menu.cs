@@ -24,18 +24,18 @@ A - Addition
 S - Subtraction
 M - Multiplication
 D - Division
-Q - Quit");
+Q - Quit"); //DIsplays the game option to the user
 
-                Console.WriteLine("----------------------------------------------------");
+                
 
                 var gameSelected = Console.ReadLine();
 
                 //Switch statement to select the game operation
 
-                switch (gameSelected.Trim().ToLower()) //
+                switch (gameSelected.Trim().ToLower()) //Normalize input by trimming whitespace and converting to lowercase
                 {
                     case "v":
-                        Helpers.PrintGames();
+                        Helpers.PrintGames(); //This will call the method to print previous game results
                         break;
                     case "a":
                         gameClass.AdditionGame("Addition game");
@@ -51,7 +51,7 @@ Q - Quit");
                         break;
                     case "q":
                         Console.WriteLine("Goodbye!");
-                        isGameOn = false; //this stops the game
+                        isGameOn = false; //this stops the game, calls false and ends
                         break;
                     default:
                         Console.WriteLine("Invalid Input");

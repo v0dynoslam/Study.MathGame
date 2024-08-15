@@ -27,7 +27,7 @@ namespace MyFirstProgram
             var firstNumber = random.Next(1, 99);
             var secondNumber = random.Next(1, 99);
 
-            var result = new int[2]; //array is the size of the array
+            var result = new int[2]; //array is the size of the array; array is fixed and efficient
 
             while (firstNumber % secondNumber != 0)
             {
@@ -35,10 +35,10 @@ namespace MyFirstProgram
                 secondNumber = random.Next(0, 99);
             }
 
-            result[0] = firstNumber;
-            result[1] = secondNumber;
+            result[0] = firstNumber; //Store the first number in the array
+            result[1] = secondNumber; //Store the second number in the array
 
-            return result;
+            return result; //Return the array of numbers
         }
         internal static void AddToHistory(int gameScore, GameType gameType)
         {
@@ -49,7 +49,7 @@ namespace MyFirstProgram
                 Type = gameType
             });
         }
-        internal static void PrintGames()
+        internal static void PrintGames() //Method to print the history of games
         {
             //var gamesToPrint = games.Where(x => x.Date > new DateTime(2022, 08, 09)).OrderByDescending(x => x.Score);
 
@@ -62,18 +62,18 @@ namespace MyFirstProgram
             }
             Console.WriteLine("------------------------\n");
             Console.WriteLine("Press any key to return to Main Menu");
-            Console.ReadLine();
+            Console.ReadLine(); //Waits for user input
         }
-        internal static string? ValidateResult(string result)
+        internal static string? ValidateResult(string result) //Method to validate the user input is a valid integer
         {
-            while (string.IsNullOrEmpty(result) || !Int32.TryParse(result, out _))
+            while (string.IsNullOrEmpty(result) || !Int32.TryParse(result, out _)) //Keep asking for input until a valid integer is entered
             {
-                Console.WriteLine("Your answer needs to be an integer, try again.");
-                result = Console.ReadLine();
+                Console.WriteLine("Your answer needs to be an integer, try again.");  
+                result = Console.ReadLine(); //Read new input from the user 
             }
             return result;
         }
-        internal static string GetName()
+        internal static string GetName() //Method to get and validate the user's name
         {
             Console.WriteLine("Please enter your name:");
             var name = Console.ReadLine();
