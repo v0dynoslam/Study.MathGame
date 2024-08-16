@@ -10,10 +10,12 @@ namespace MyFirstProgram
 {
     internal class WeatherService
     {
+
         private const string ApiKey = "a24211faf25f0ab4e2edccf46b43153d"; // OpenWeather API key
         private const string BaseUrl = "http://api.openweathermap.org/data/2.5/weather";
 
-        public static async Task<string> GetWeatherAsync(string city)
+
+        public static async Task<string> GetWeatherAsync(string city) //Call method to fetch "city" weather data
         {
             using (HttpClient client = new HttpClient())
             {
