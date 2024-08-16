@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 
+
+
 namespace MyFirstProgram
 {
     internal class WeatherService
@@ -15,7 +17,7 @@ namespace MyFirstProgram
         private const string BaseUrl = "http://api.openweathermap.org/data/2.5/weather";
 
 
-        public static async Task<string> GetWeatherAsync(string city) //Call method to fetch "city" weather data
+        public static async Task<string> GetWeatherAsync(string city)
         {
             using (HttpClient client = new HttpClient())
             {
