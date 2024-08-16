@@ -12,8 +12,6 @@ namespace MyFirstProgram
     {
         private const string ApiKey = "a24211faf25f0ab4e2edccf46b43153d"; // OpenWeather API key
         private const string BaseUrl = "http://api.openweathermap.org/data/2.5/weather";
-        private readonly string _apiKey = "public key"; 
-        private readonly HttpClient _httpClient;
 
         public static async Task<string> GetWeatherAsync(string city)
         {
