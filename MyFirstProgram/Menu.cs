@@ -2,12 +2,17 @@
 {
     internal class Menu
     {
-        GameEngine gameClass = new(); //Integration; utilize GameEngine method to run different type of games
-        internal void ShowMenu(string name, DateTime date)
+         GameEngine gameClass = new(); //Integration; utilize GameEngine method to run different type of games
+        internal async Task ShowMenu(string name, DateTime date)
         {
             Console.Clear(); //clear the console everytime the menu runs 
             Console.WriteLine("------------------------");
             Console.WriteLine($"Hello {name}. It's {date}. This is your math game. It's going to be awesome!");
+
+
+            //Display weather information here
+            Console.WriteLine(await WeatherService.GetWeatherAsync("Dallas")); //Insert a city here to display the info 
+
             Console.WriteLine("Press any key to show the menu");
             Console.ReadLine();
             Console.WriteLine("\n");
@@ -26,7 +31,7 @@ M - Multiplication
 D - Division
 Q - Quit"); //DIsplays the game option to the user
 
-                
+
 
                 var gameSelected = Console.ReadLine();
 
@@ -59,6 +64,7 @@ Q - Quit"); //DIsplays the game option to the user
                 }
             } while (isGameOn); //Menu loop, will run if isGameOn is true
         }
-
     }
 }
+
+
