@@ -9,6 +9,7 @@ using System.Net.Http;
 
 
 
+
 namespace MyFirstProgram
 {
     internal class WeatherService
@@ -33,4 +34,3 @@ namespace MyFirstProgram
             }
         }
     }
-}
