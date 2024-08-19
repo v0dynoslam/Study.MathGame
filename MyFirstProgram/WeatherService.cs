@@ -15,22 +15,22 @@ namespace MyFirstProgram
     internal class WeatherService
     {
 
-        private const string ApiKey = "a24211faf25f0ab4e2edccf46b43153d"; // OpenWeather API key
-        private const string BaseUrl = "http://api.openweathermap.org/data/2.5/weather";
+        private const string ApiKey = "a24211faf25f0ab4e2edccf46b43153d"; // API key from OpenWeather
+        private const string BaseUrl = "http://api.openweathermap.org/data/2.5/weather"; //stores URL to OpenWeather
 
 
         public static async Task<string> GetWeatherAsync(string city)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient()) //Class to send and receive HTTP responses from the URL
             {
-                var url = $"{BaseUrl}?q={city}&appid={ApiKey}&units=imperial"; // Use "imperial" for Fahrenheit
+                var url = $"{BaseUrl}?q={city}&appid={ApiKey}&units=imperial"; // Imperial uses Fahrenheit
                 var response = await client.GetStringAsync(url);
                 var weatherData = JObject.Parse(response);
 
-                var weatherDescription = weatherData["weather"][0]["description"].ToString();
+                var weatherDescription = weatherData["weather"][0]["description"].ToString(); 
                 var temperature = weatherData["main"]["temp"].ToString();
 
-                return $"It is currently {weatherDescription} with a temperature of {temperature} degrees Fahrenheit in {city}.\n";
+                return $"It is currently {weatherDescription} with a temperature of {temperature} degrees Fahrenheit in {city}.\n"; 
             }
         }
     }
