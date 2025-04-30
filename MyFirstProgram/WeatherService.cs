@@ -15,7 +15,7 @@ namespace MyFirstProgram
     internal class WeatherService
     {
 
-        private const string ApiKey = "a24211faf25f0ab4e2edccf46b43153d"; // API key from OpenWeather
+        private const string ApiKey = "123"; // API key from OpenWeather
         private const string BaseUrl = "http://api.openweathermap.org/data/2.5/weather"; //stores URL to OpenWeather
 
 
